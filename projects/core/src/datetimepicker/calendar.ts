@@ -314,6 +314,17 @@ export class MatDatetimepickerCalendarComponent<D>
     }
   }
 
+  @Input() confirmButtonLabel: string;
+  _handleConfirmButton(event): void {
+    this.selectedChange.emit(this._activeDate);
+    this._userSelected();
+  }
+
+  @Input() cancelButtonLabel: string;
+  _handleCancelButton(event): void {
+    this._userSelected();
+  }
+
   /** Date filter for the month and year views. */
   _dateFilterForViews = (date: D) => {
     return (

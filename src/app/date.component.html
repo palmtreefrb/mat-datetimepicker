@@ -35,6 +35,40 @@
     >
   </mat-form-field>
   <mat-form-field>
+    <mat-placeholder>DateTime with Action Buttons</mat-placeholder>
+    <mat-datetimepicker-toggle
+      [for]="datetimePicker"
+      matSuffix
+    ></mat-datetimepicker-toggle>
+    <mat-datetimepicker
+      #datetimePicker
+      openOnFocus="true"
+      startView="month"
+      timeInterval="5"
+      type="datetime"
+      confirmButtonLabel="Confirm"
+      cancelButtonLabel="Cancel"
+    ></mat-datetimepicker>
+    <input
+      [matDatetimepicker]="datetimePicker"
+      [max]="tomorrow"
+      [min]="today"
+      autocomplete="false"
+      formControlName="dateTime"
+      matInput
+      required
+    />
+    <mat-error *ngIf="group.get('dateTime').errors?.required"
+      >required</mat-error
+    >
+    <mat-error *ngIf="group.get('dateTime').errors?.matDatepickerMin"
+      >min</mat-error
+    >
+    <mat-error *ngIf="group.get('dateTime').errors?.matDatepickerMax"
+      >max</mat-error
+    >
+  </mat-form-field>
+  <mat-form-field>
     <mat-placeholder>DateTime Year selector</mat-placeholder>
     <mat-datetimepicker-toggle
       [for]="datetimeYearPicker"

@@ -30,7 +30,6 @@ export type MatClockView = 'hour' | 'minute';
   },
 })
 export class MatDatetimepickerClockComponent<D> implements AfterContentInit {
-  @Output() _userSelection = new EventEmitter<void>();
   /** A function used to filter which dates are selectable. */
   @Input() dateFilter: (date: D, type: MatDatetimepickerFilterType) => boolean;
   @Input() interval: number = 1;
@@ -191,9 +190,6 @@ export class MatDatetimepickerClockComponent<D> implements AfterContentInit {
     document.removeEventListener('touchend', this.mouseUpListener);
     if (this._timeChanged) {
       this.selectedChange.emit(this.activeDate);
-      if (!this._hourView) {
-        this._userSelection.emit();
-      }
     }
   }
 

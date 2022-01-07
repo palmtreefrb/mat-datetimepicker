@@ -108,6 +108,12 @@ $mat-calendar-next-icon-transform: translateX(-2px) rotate(45deg);
   }
 }
 
+.mat-datetimepicker-calendar-footer {
+  padding: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .mat-datetimepicker-calendar-controls {
   display: flex;
   justify-content: space-between;

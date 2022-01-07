@@ -112,6 +112,8 @@ export class MatDatetimepickerComponent<D> implements OnDestroy {
   @Input() ariaPrevMonthLabel = 'Previous month';
   @Input() ariaNextYearLabel = 'Next year';
   @Input() ariaPrevYearLabel = 'Previous year';
+  @Input() confirmButtonLabel;
+  @Input() cancelButtonLabel;
   /** Prevent user to select same date time */
   @Input() preventSameDateTimeSelection = false;
   /**

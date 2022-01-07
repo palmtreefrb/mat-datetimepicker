@@ -144,4 +144,19 @@
     [twelvehour]="twelvehour"
   >
   </mat-datetimepicker-clock>
+  <div
+    class="mat-datetimepicker-calendar-footer"
+    *ngIf="cancelButtonLabel && confirmButtonLabel"
+  >
+    <button mat-button color="primary" (click)="_handleCancelButton($event)">
+      {{ cancelButtonLabel }}
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="_handleConfirmButton($event)"
+    >
+      {{ confirmButtonLabel }}
+    </button>
+  </div>
 </div>
